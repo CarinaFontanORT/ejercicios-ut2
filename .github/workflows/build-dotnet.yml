@@ -17,6 +17,10 @@ jobs:
     name: build-win
     runs-on: windows-latest
     steps:
+    - name: 'Inicio'
+      run: |
+        echo 'Comienzo del build'
+        
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
@@ -28,3 +32,7 @@ jobs:
       
     - name: Build
       run: dotnet build --configuration Release --no-restore
+      
+    - name: 'Fin'
+      run: |
+        echo 'Finalizó el build'
