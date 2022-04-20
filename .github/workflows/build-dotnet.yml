@@ -22,6 +22,9 @@ jobs:
         echo 'Comienzo del build'
         
     - uses: actions/checkout@v2
+      with:
+        path: ut2-backend
+ 
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
