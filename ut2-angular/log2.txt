@@ -1,6 +1,0 @@
-
-> ut2-angular@0.0.0 build-staging
-> ng build --configuration staging
-
-Schema validation failed with the following errors:
-  Data path "" must NOT have additional properties(outputPaths).
