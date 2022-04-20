@@ -22,8 +22,6 @@ jobs:
         echo 'Comienzo del build'
         
     - uses: actions/checkout@v2
-      with:
-        path: ./ut2-backend
  
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
@@ -32,9 +30,10 @@ jobs:
 
     - name: Install dependencies
       run: dotnet restore
+      working-directory: ./
       
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build PracticoUT2.sln --configuration Release --no-restore
       
     - name: 'Fin'
       run: |
