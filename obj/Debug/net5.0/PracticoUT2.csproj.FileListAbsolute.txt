@@ -1,0 +1,6 @@
+/Users/carina.fontan/ORT/ISA2/PracticoUT2/PracticoUT2/bin/Debug/net5.0/PracticoUT2.deps.json
+/Users/carina.fontan/ORT/ISA2/PracticoUT2/PracticoUT2/bin/Debug/net5.0/PracticoUT2.runtimeconfig.json
+/Users/carina.fontan/ORT/ISA2/PracticoUT2/PracticoUT2/bin/Debug/net5.0/PracticoUT2.runtimeconfig.dev.json
+/Users/carina.fontan/ORT/ISA2/PracticoUT2/PracticoUT2/bin/Debug/net5.0/PracticoUT2.dll
+/Users/carina.fontan/ORT/ISA2/PracticoUT2/PracticoUT2/bin/Debug/net5.0/ref/PracticoUT2.dll
+/Users/carina.fontan/ORT/ISA2/PracticoUT2/PracticoUT2/bin/Debug/net5.0/PracticoUT2.pdb
