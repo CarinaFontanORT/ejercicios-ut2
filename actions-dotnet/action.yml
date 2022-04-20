@@ -1,0 +1,12 @@
+name: 'Build .net app'
+description: 'Build .net app'
+branding:
+  icon: activity
+  color: orange
+outputs:
+  summary-title:
+    description:
+      'Build finished'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
