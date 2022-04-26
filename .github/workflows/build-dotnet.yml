@@ -44,7 +44,7 @@ jobs:
         echo 'Finalizó el build'
       
     - name: Test
-      run: dotnet test --no-restore --diagnostic normal
+      run: dotnet test --no-restore --verbosity diagnostic
       
     - name: 'Fin tests'
       run: |
