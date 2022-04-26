@@ -44,9 +44,18 @@ jobs:
         echo 'Finalizó el build'
       
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity normal --logger "trx;LogFileName=test-results.trx" || true
       
     - name: 'Fin tests'
       run: |
         echo 'Se terminaron de correr los tests'
+              
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: DotNET Tests
+        path: "**/test-results.trx"                            
+        reporter: dotnet-trx
+        fail-on-error: true
       
