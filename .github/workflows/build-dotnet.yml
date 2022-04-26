@@ -44,7 +44,7 @@ jobs:
    #     echo 'Finalizó el build'  
       
     - name: Test with dotnet
-      run: dotnet test --logger "trx;LogFileName=test-results.trx" --results-directory "TestResults"
+      run: dotnet test UnitTestPracticoUT2/UnitTestPracticoUT2.csproj --logger "trx;LogFileName=test-results.trx" --results-directory "TestResults"
       
     - name: Upload dotnet test results
       uses: dorny/test-reporter@v1
