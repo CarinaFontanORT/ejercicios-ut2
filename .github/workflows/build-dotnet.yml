@@ -15,7 +15,7 @@ jobs:
   build:
 
     name: build-win
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: 'Inicio'
       run: |
@@ -44,15 +44,15 @@ jobs:
         echo 'Finalizó el build'  
       
     - name: Test with dotnet
-      run: dotnet test --logger "trx;LogFileName=test-results.trx" || true
+      run: dotnet test --logger "trx;LogFileName=test-results.trx" --results-directory "TestResults"
       
     - name: Upload dotnet test results
-      uses: actions/upload-artifact@v3
+      uses: dorny/test-reporter@v1
+      if: success() || failure()  
       with:
-        name: dotnet-results
-        path: "**/test-results.trx"
-          # Use always() to always run this step to publish test results when there are test failures
-      if: ${{ always() }}
+        name: NUnit Tests            # Name of the check run which will be created
+        path: TestResults/test-results.trx    # Path to test results
+        reporter: dotnet-trx  
       
     - name: 'Fin tests'
       run: |
