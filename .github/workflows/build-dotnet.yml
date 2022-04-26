@@ -42,14 +42,16 @@ jobs:
     - name: 'Fin build'
       run: |
         echo 'Finalizó el build'
+    
+    - run: mkdir -p ./TestResults
       
     - name: Test with dotnet
-      run: dotnet test --logger trx --results-directory "TestResults-${{ env.DOTNET_VERSION }}"
+      run: dotnet test --logger trx --results-directory "TestResults"
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v3
       with:
-        name: dotnet-results-${{ env.DOTNET_VERSION }}
-        path: TestResults-${{ env.DOTNET_VERSION }}
+        name: dotnet-results
+        path: ./TestResults
           # Use always() to always run this step to publish test results when there are test failures
       if: ${{ always() }}
       
