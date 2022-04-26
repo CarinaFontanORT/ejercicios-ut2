@@ -32,13 +32,21 @@ jobs:
       run: dotnet restore
       working-directory: ./
       
-    - name: 'fin dependencias'
+    - name: 'Fin dependencias'
       run: |
         echo 'Dependencias ok'
       
     - name: Build
       run: dotnet build PracticoUT2.sln --configuration Release --no-restore
       
-    - name: 'Fin'
+    - name: 'Fin build'
       run: |
         echo 'Finalizó el build'
+      
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
+      
+    - name: 'Fin tests'
+      run: |
+        echo 'Se terminaron de correr los tests'
+      
