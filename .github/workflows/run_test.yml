@@ -1,0 +1,62 @@
+name: build-dotnet
+
+on:
+  #push:
+  pull_request:
+    branches: [ main ]
+    paths:
+    - '**.cs'
+    - '**.csproj'
+
+env:
+  DOTNET_VERSION: '5.0.301' # The .NET SDK version to use
+
+jobs:
+  build:
+
+    name: build-win
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Inicio'
+      run: |
+        echo 'Comienzo del build'
+        
+    - uses: actions/checkout@v2
+ 
+  #  - name: Setup .NET Core
+   #   uses: actions/setup-dotnet@v1
+   #   with:
+   #     dotnet-version: ${{ env.DOTNET_VERSION }}
+
+   # - name: Install dependencies
+    #  run: dotnet restore
+    #  working-directory: ./
+      
+  #  - name: 'Fin dependencias'
+   #   run: |
+   #     echo 'Dependencias ok'
+      
+   # - name: Build
+   #   run: dotnet build PracticoUT2.sln --configuration Release --no-restore
+      
+   # - name: 'Fin build'
+   #   run: |
+   #     echo 'Finalizó el build'  
+      
+    - name: Test with dotnet
+      run: dotnet test UnitTestPracticoUT2/UnitTestPracticoUT2.csproj --logger "trx;LogFileName=test-results.trx" --results-directory "TestResults"
+      working-directory: ./
+      
+    - name: Upload dotnet test results
+      uses: dorny/test-reporter@v1
+      if: success() || failure()  
+      with:
+        name: MSTests            # Name of the check run which will be created
+        path: TestResults/test-results.trx    # Path to test results
+        reporter: dotnet-trx  
+      
+    - name: 'Fin tests'
+      run: |
+        echo 'Se terminaron de correr los tests'
+        
+    
