@@ -8,24 +8,30 @@
     "net5.0": []
   },
   "packageFolders": {
-    "/Users/carina.fontan/.nuget/packages/": {}
+    "C:\\Users\\alejo\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/carina.fontan/ORT/ISA2/PracticoUT2/PracticoUT2/PracticoUT2.csproj",
+      "projectUniqueName": "A:\\ORT - Docencia\\Ingeniería de Software Ágil 2\\Comienzo Marzo 2022\\UT2 - Prácticas técnicas\\ejercicios-ut2\\PracticoUT2\\PracticoUT2.csproj",
       "projectName": "PracticoUT2",
-      "projectPath": "/Users/carina.fontan/ORT/ISA2/PracticoUT2/PracticoUT2/PracticoUT2.csproj",
-      "packagesPath": "/Users/carina.fontan/.nuget/packages/",
-      "outputPath": "/Users/carina.fontan/ORT/ISA2/PracticoUT2/PracticoUT2/obj/",
+      "projectPath": "A:\\ORT - Docencia\\Ingeniería de Software Ágil 2\\Comienzo Marzo 2022\\UT2 - Prácticas técnicas\\ejercicios-ut2\\PracticoUT2\\PracticoUT2.csproj",
+      "packagesPath": "C:\\Users\\alejo\\.nuget\\packages\\",
+      "outputPath": "A:\\ORT - Docencia\\Ingeniería de Software Ágil 2\\Comienzo Marzo 2022\\UT2 - Prácticas técnicas\\ejercicios-ut2\\PracticoUT2\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/Users/carina.fontan/.config/NuGet/NuGet.Config"
+        "C:\\Users\\alejo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -58,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.406/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

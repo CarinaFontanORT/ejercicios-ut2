@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.810.21
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticoUT2", "PracticoUT2\PracticoUT2.csproj", "{16761946-9C69-4BEF-AED7-B0A194A9F82D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticoUT2", "PracticoUT2\PracticoUT2.csproj", "{16761946-9C69-4BEF-AED7-B0A194A9F82D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestPracticoUT2", "UnitTestPracticoUT2\UnitTestPracticoUT2.csproj", "{FCC57E16-91F2-44F3-890C-578A08C214B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,12 @@ Global
 		{16761946-9C69-4BEF-AED7-B0A194A9F82D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{16761946-9C69-4BEF-AED7-B0A194A9F82D}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
 		{16761946-9C69-4BEF-AED7-B0A194A9F82D}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{FCC57E16-91F2-44F3-890C-578A08C214B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC57E16-91F2-44F3-890C-578A08C214B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC57E16-91F2-44F3-890C-578A08C214B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC57E16-91F2-44F3-890C-578A08C214B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC57E16-91F2-44F3-890C-578A08C214B4}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC57E16-91F2-44F3-890C-578A08C214B4}.Staging|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
