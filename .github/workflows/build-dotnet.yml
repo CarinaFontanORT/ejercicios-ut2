@@ -43,19 +43,18 @@ jobs:
       run: |
         echo 'Finalizó el build'
       
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal --logger "trx;LogFileName=test-results.trx" || true
+    - name: Test with dotnet
+      run: dotnet test --logger trx --results-directory "TestResults-${{ env.DOTNET_VERSION }}"
+    - name: Upload dotnet test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: dotnet-results-${{ env.DOTNET_VERSION }}
+        path: TestResults-${{ env.DOTNET_VERSION }}
+          # Use always() to always run this step to publish test results when there are test failures
+      if: ${{ always() }}
       
     - name: 'Fin tests'
       run: |
         echo 'Se terminaron de correr los tests'
-              
-    - name: Test Report
-      uses: dorny/test-reporter@v1
-      if: always()
-      with:
-        name: DotNET Tests
-        path: "**/test-results.trx"                            
-        reporter: dotnet-trx
-        fail-on-error: true
-      
+        
+    
