@@ -51,7 +51,6 @@ jobs:
       with:
         name: dotnet-tests-results
         path: ./TestResults/*.*
-        if: always()
     
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.2
