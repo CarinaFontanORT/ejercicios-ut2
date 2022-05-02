@@ -43,6 +43,16 @@ jobs:
       run: |
         echo 'Finalizó el build'
         
+    - name: Run tests
+      run: dotnet test --logger trx --results-directory "TestResults"
+    
+    - name: Upload dotnet test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: dotnet-tests-results
+        path: ./TestResults/*.*
+        if: always()
+    
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.2
       with:
