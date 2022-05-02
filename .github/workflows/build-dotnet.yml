@@ -42,3 +42,9 @@ jobs:
     - name: 'Fin build'
       run: |
         echo 'Finalizó el build'
+        
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.2
+      with:
+        name: GitHubActionsDotNetDownloadableArtifact
+        path: ./PracticoUT2/bin/release/net5.0/*.*
