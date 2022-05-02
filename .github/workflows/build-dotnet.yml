@@ -44,8 +44,14 @@ jobs:
         echo 'Finalizó el build'
       
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
-      
+      run: dotnet test --logger trx --results-directory "TestResults-${{ env.DOTNET_VERSION }}"
+        
+    - name: Upload dotnet test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: dotnet-results-${{ env.DOTNET_VERSION }}
+        path: TestResults-${{ env.DOTNET_VERSION }}
+        if: ${{ always() }}
     - name: 'Fin tests'
       run: |
         echo 'Se terminaron de correr los tests'
