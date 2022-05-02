@@ -42,16 +42,3 @@ jobs:
     - name: 'Fin build'
       run: |
         echo 'Finalizó el build'
-      
-    - name: Test
-      run: dotnet test --logger trx --results-directory "TestResults"
-        
-    - name: Upload dotnet test results
-      uses: actions/upload-artifact@v3
-      with:
-        name: dotnet-results
-        path: TestResults
-        if: always()
-    - name: 'Fin tests'
-      run: |
-        echo 'Se terminaron de correr los tests'
