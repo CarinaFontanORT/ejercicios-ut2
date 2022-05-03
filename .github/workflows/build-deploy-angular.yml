@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
 
       - uses: actions/setup-node@v1
         with:
@@ -28,7 +29,8 @@ jobs:
         run: |
           npm install
           npm run-script deploy
-        working-directory: ./  
+        working-directory: ./ut2-ejercicios-angular/
+
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
