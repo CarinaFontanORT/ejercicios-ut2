@@ -6,13 +6,13 @@ on:
     branches: [ main ]
 
 env:
-  DOTNET_VERSION: '5.0.301' # The .NET SDK version to use
+  DOTNET_VERSION: '3.1.402' # The .NET SDK version to use
 
 jobs:
   build:
 
-    name: build-win
-    runs-on: windows-latest
+    name: build-ubunto
+    runs-on: ubuntu-latest
   
     steps:
     - name: 'Init - Checkout'
@@ -25,26 +25,40 @@ jobs:
 
     - name: Install dependencies
       run: dotnet restore
+      shell: bash
       working-directory: ./
-      
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-      
-    - name: 'Fin build'
-      run: |
-        echo 'Finalizó el build'
-        
-    - name: Run tests
-      run: dotnet test --logger "trx;LogFileName=test-results.trx" || true
     
-    - name: Test Report
+    - name: List Dependencies
+      run: dotnet list package > dependencies.txt
+      shell: bash
+      
+    - name: Collect Dependencies
+      uses: actions/upload-artifact@v2
+      with:
+        name: Dependencies
+        path: dependencies.txt
+        
+    - name: List Dependency Updates
+      run: dotnet list package --outdated > dependencyUpdates.txt
+      shell: bash
+      
+    - name: Collect Dependency Updates
+      uses: actions/upload-artifact@v2
+      with:
+        name: Dependencies Updates
+        path: dependencyUpdates.txt
+      
+    - name: Test
+      run: dotnet test -l:trx || true
+      shell: bash
+    - if: always()
+      name: Report
       uses: dorny/test-reporter@v1
-      if: always()
       with:
         name: DotNET Tests
-        path: "test-results.trx"                            
+        path: '**/*.trx'
         reporter: dotnet-trx
-        fail-on-error: true
+        fail-on-error: 'false'
     
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.2
