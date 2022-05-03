@@ -50,3 +50,9 @@ jobs:
       with:
         name: GitHubActionsDotNetDownloadableArtifact
         path: ./PracticoUT2/bin/release/net5.0/*.*
+        
+    - name: Upload tests results
+      uses: actions/upload-artifact@v2.2.2
+      with:
+        name: GitHubActionsTestsResults
+        path: '**/*.trx'
