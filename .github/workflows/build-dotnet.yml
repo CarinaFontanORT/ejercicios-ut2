@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  DOTNET_VERSION: '3.1.402' # The .NET SDK version to use
+  DOTNET_VERSION: '5.0.301' # The .NET SDK version to use
 
 jobs:
   build:
@@ -22,34 +22,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
-
-    - name: Install dependencies
-      run: dotnet restore
-      shell: bash
-      working-directory: ./
-    
-    - name: List Dependencies
-      run: dotnet list package > dependencies.txt
-      shell: bash
-      
-    - name: Collect Dependencies
-      uses: actions/upload-artifact@v2
-      with:
-        name: Dependencies
-        path: dependencies.txt
         
-    - name: List Dependency Updates
-      run: dotnet list package --outdated > dependencyUpdates.txt
-      shell: bash
-      
-    - name: Collect Dependency Updates
-      uses: actions/upload-artifact@v2
-      with:
-        name: Dependencies Updates
-        path: dependencyUpdates.txt
-      
     - name: Test
-      run: dotnet test -l:trx || true
+      run: dotnet test UnitTestPracticoUT2v2/UnitTestPracticoUT2v2.csproj -l:trx || true
       shell: bash
     - if: always()
       name: Report
