@@ -23,6 +23,13 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
         
+    - name: Install dependencies
+      run: dotnet restore
+      working-directory: ./
+      
+    - name: Build
+      run: dotnet build PracticoUT2.sln --configuration Release --no-restore
+        
     - name: Test
       run: dotnet test UnitTestPracticoUT2v2/UnitTestPracticoUT2v2.csproj -l:trx || true
       shell: bash
