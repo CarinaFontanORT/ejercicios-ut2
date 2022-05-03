@@ -36,5 +36,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: ./ut2-ejercicios-angular/build # The folder the action should deploy.
+          folder: ./ut2-ejercicios-angular/ # The folder the action should deploy.
   
