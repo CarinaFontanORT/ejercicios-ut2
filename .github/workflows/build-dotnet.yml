@@ -11,8 +11,8 @@ env:
 jobs:
   build:
 
-    name: build-ubuntu
-    runs-on: ubuntu-latest
+    name: build-win
+    runs-on: windows-latest
   
     steps:
     - name: 'Init - Checkout'
