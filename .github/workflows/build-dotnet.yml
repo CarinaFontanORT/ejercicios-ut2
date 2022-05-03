@@ -4,9 +4,6 @@ on:
   push:
   pull_request:
     branches: [ main ]
-    paths:
-    - '**.cs'
-    - '**.csproj'
 
 env:
   DOTNET_VERSION: '5.0.301' # The .NET SDK version to use
@@ -14,14 +11,12 @@ env:
 jobs:
   build:
 
-    name: build-win
-    runs-on: windows-latest
+    name: build-ubuntu
+    runs-on: ubuntu-latest
+  
     steps:
-    - name: 'Inicio'
-      run: |
-        echo 'Comienzo del build'
-        
-    - uses: actions/checkout@v2
+    - name: 'Init - Checkout'
+      uses: actions/checkout@v2
  
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
@@ -32,25 +27,24 @@ jobs:
       run: dotnet restore
       working-directory: ./
       
-    - name: 'Fin dependencias'
-      run: |
-        echo 'Dependencias ok'
-      
     - name: Build
-      run: dotnet build PracticoUT2.sln --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore
       
     - name: 'Fin build'
       run: |
         echo 'Finalizó el build'
         
     - name: Run tests
-      run: dotnet test --logger "trx;LogFileName=test-results.trx"
+      run: dotnet test --logger "trx;LogFileName=test-results.trx" || true
     
-    - name: Upload dotnet test results
-      uses: actions/upload-artifact@v3
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: always()
       with:
-        name: dotnet-tests-results
-        path: test-results.trx
+        name: DotNET Tests
+        path: "**/test-results.trx"                            
+        reporter: dotnet-trx
+        fail-on-error: true
     
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.2
