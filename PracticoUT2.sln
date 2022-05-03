@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticoUT2", "PracticoUT2\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestPracticoUT2", "UnitTestPracticoUT2\UnitTestPracticoUT2.csproj", "{FCC57E16-91F2-44F3-890C-578A08C214B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestPracticoUT2v2", "UnitTestPracticoUT2v2\UnitTestPracticoUT2v2.csproj", "{A3A7983F-C1C2-46A3-B904-D8C3FFF21283}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,12 @@ Global
 		{FCC57E16-91F2-44F3-890C-578A08C214B4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FCC57E16-91F2-44F3-890C-578A08C214B4}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
 		{FCC57E16-91F2-44F3-890C-578A08C214B4}.Staging|Any CPU.Build.0 = Debug|Any CPU
+		{A3A7983F-C1C2-46A3-B904-D8C3FFF21283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3A7983F-C1C2-46A3-B904-D8C3FFF21283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3A7983F-C1C2-46A3-B904-D8C3FFF21283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3A7983F-C1C2-46A3-B904-D8C3FFF21283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3A7983F-C1C2-46A3-B904-D8C3FFF21283}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{A3A7983F-C1C2-46A3-B904-D8C3FFF21283}.Staging|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,22 +8,22 @@
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType></DebugType>
-    <OutputPath>..\..\..\net5.0</OutputPath>
+    <OutputPath>..\..\..\net5.0\net5.0</OutputPath>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Staging|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>portable</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Staging\net5.0</OutputPath>
+    <OutputPath>bin\Staging\net5.0\net5.0</OutputPath>
     <DefineConstants></DefineConstants>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
-    <IntermediateOutputPath>obj\Staging\net5.0</IntermediateOutputPath>
+    <IntermediateOutputPath>obj\Staging\net5.0\net5.0</IntermediateOutputPath>
     <NoWarn>1701;1702</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\net5.0</OutputPath>
+    <OutputPath>bin\Debug\net5.0\net5.0</OutputPath>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 </Project>
